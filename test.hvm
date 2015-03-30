@@ -1,0 +1,4 @@
+SET 1 5
+SET 2 7
+ADD 1 2
+OUT 0

@@ -1,0 +1,19 @@
+SOURCES=hvm.c
+OBJECTS=hvm.o
+EXECUTABLE=hvm
+
+FLAGS=-Wall -pedantic
+
+TESTPROGRAM=test.hvm
+
+all: test
+
+test: $(EXECUTABLE) $(TESTPROGRAM)
+	./$(EXECUTABLE) $(TESTPROGRAM)
+
+$(EXECUTABLE): $(OBJECTS)
+	gcc $(OBJECTS) $(FLAGS) -o $(EXECUTABLE)
+
+$(OBJECTS): $(SOURCES)
+	gcc -c $(SOURCES) $(FLAGS) -o $(OBJECTS)
+
